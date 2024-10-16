@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портал мероприятий</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Портал мероприятий</h1>
+
+    <div id="auth-form">
+        <h2>Регистрация</h2>
+        <input type="text" id="register-username" placeholder="Имя пользователя">
+        <input type="password" id="register-password" placeholder="Пароль">
+        <button onclick="register()">Зарегистрироваться</button>
+
+        <h2>Вход</h2>
+        <input type="text" id="login-username" placeholder="Имя пользователя">
+        <input type="password" id="login-password" placeholder="Пароль">
+        <button onclick="login()">Войти</button>
+    </div>
+
+    <div id="filter-section">
+        <h2>Фильтрация мероприятий</h2>
+        <input type="text" id="filter-title" placeholder="Название мероприятия" oninput="filterEvents()">
+        <input type="text" id="filter-type" placeholder="Тип мероприятия" oninput="filterEvents()">
+    </div>
+
+    <div id="event-form">
+        <h2>Создать мероприятие</h2>
+        <input type="text" id="title" placeholder="Название мероприятия">
+        <input type="text" id="type" placeholder="Тип мероприятия">
+        <input type="datetime-local" id="startTime">
+        <input type="datetime-local" id="endTime">
+        <input type="text" id="location" placeholder="Место проведения">
+        <button onclick="createEvent()">Создать</button>
+    </div>
+
+    <div id="edit-event-form" style="display: none;">
+        <h2>Редактировать мероприятие</h2>
+        <input type="text" id="edit-title" placeholder="Название мероприятия">
+        <input type="text" id="edit-type" placeholder="Тип мероприятия">
+        <input type="datetime-local" id="edit-startTime">
+        <input type="datetime-local" id="edit-endTime">
+        <input type="text" id="edit-location" placeholder="Место проведения">
+        <button onclick="updateEvent()">Сохранить изменения</button>
+        <button onclick="cancelEdit()">Отмена</button>
+    </div>
+
+    <div id="event-list">
+        <h2>Список мероприятий</h2>
+        <ul id="events"></ul>
+    </div>
+
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>
